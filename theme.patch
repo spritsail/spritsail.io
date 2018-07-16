@@ -1,0 +1,104 @@
+From 9f077cb66831638c6a90172c085a6416361c12ec Mon Sep 17 00:00:00 2001
+From: Adam Dodman <adam@adam-ant.co.uk>
+Date: Mon, 16 Jul 2018 16:35:50 +0100
+Subject: [PATCH 1/3] Fix title on homepage
+
+---
+ templates/index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/templates/index.html b/templates/index.html
+index 795db93..7b7842e 100644
+--- a/templates/index.html
++++ b/templates/index.html
+@@ -1,6 +1,6 @@
+ {% extends "base.html" %}
+ 
+-{% block title %}Home{% endblock %}
++{% block title %}{{ SITENAME }}{% endblock %}
+ 
+ {% block content %}
+ 
+-- 
+2.18.0
+
+
+From 44c27bd52b33ea2035ff6a3518bfaed627b22f2c Mon Sep 17 00:00:00 2001
+From: Adam Dodman <adam@adam-ant.co.uk>
+Date: Mon, 16 Jul 2018 16:36:04 +0100
+Subject: [PATCH 2/3] Add spritsail copyright notice
+
+---
+ templates/partial/copyright.html | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/templates/partial/copyright.html b/templates/partial/copyright.html
+index 6fe0090..6370dbf 100644
+--- a/templates/partial/copyright.html
++++ b/templates/partial/copyright.html
+@@ -1,5 +1,6 @@
+ <div class="fh5co-footer">
+-    <p><small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a></span>
+-    <br /><span>Pelican Theme by: <a href="https://github.com/claudio-walser/pelican-fh5co-marble" target="_blank">Claudio Walser</a></span></small></p>
++    <p><small>      &copy; 2018 Spritsail.io  All Rights Reserved.</span>
++    <br /><span>      Theme designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a></span>
++    <br /><span>      Pelican theme conversion by: <a href="https://github.com/claudio-walser/pelican-fh5co-marble" target="_blank">Claudio Walser</a></span></small></p>
+ 
+-</div>
+\ No newline at end of file
++</div>
+-- 
+2.18.0
+
+
+From 3947ce50be0de7cef41887ca1a45bd58a5f201f6 Mon Sep 17 00:00:00 2001
+From: Adam Dodman <adam@adam-ant.co.uk>
+Date: Mon, 16 Jul 2018 16:36:13 +0100
+Subject: [PATCH 3/3] Styling tweaks
+
+---
+ static/css/style.css | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/static/css/style.css b/static/css/style.css
+index 32b987e..4103a4b 100755
+--- a/static/css/style.css
++++ b/static/css/style.css
+@@ -118,14 +118,14 @@ figure figcaption {
+   text-align: center;
+   font-family: "Roboto", Arial, sans-serif;
+   font-weight: 700;
+-  margin-bottom: 2em;
++  margin-bottom: 1em;
+   text-transform: uppercase;
+   font-size: 38px;
+ }
+ 
+ 
+ #fh5co-aside #fh5co-logo img {
+-  width: 150px;
++  width: 230px;
+ }
+ 
+ #fh5co-aside #fh5co-logo a {
+@@ -388,7 +388,7 @@ figure figcaption {
+ }
+ #fh5co-hero .flexslider .slider-text > .slider-text-inner h1 {
+   margin-bottom: 20px;
+-  font-size: 45px;
++  font-size: 65px;
+   line-height: 1.3;
+   font-weight: 100;
+   font-family: "Roboto", Arial, sans-serif;
+@@ -399,7 +399,7 @@ figure figcaption {
+   }
+ }
+ #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
+-  font-size: 18px;
++  font-size: 35px;
+   line-height: 1.5;
+   margin-bottom: 30px;
+   font-weight: 300;
+-- 
+2.18.0
+

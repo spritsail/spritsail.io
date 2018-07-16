@@ -6,7 +6,7 @@ pipeline:
       - pip install pelican markdown beautifulsoup4
       - git clone https://github.com/getpelican/pelican-plugins.git /pelican-plugins
       - git clone https://github.com/claudio-walser/pelican-fh5co-marble.git /fh5co-marble
-      - cp copyright.html /fh5co-marble/templates/partial/copyright.html
+      - git -C /fh5co-marble apply /drone/src/github.com/spritsail/spritsail.io/theme.patch
       - pelican -s pelicanconf.py -o output/ content/
       - mkdir -p output/theme/css/fonts
       - cp output/theme/fonts/icomoon/icomoon.* output/theme/css/fonts/
