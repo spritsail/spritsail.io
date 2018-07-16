@@ -43,19 +43,25 @@ HERO = [
     'image': '/assets/home/background-1.jpg',
     # for multilanguage support, create a simple dict
     'title': 'Spritsail',
-    'text': 'We create and maintain the smallest Docker images possible',
+    'text': 'We develop and maintain the smallest Docker images possible',
     'links': [
       {
-        'icon': 'icon-code',
+        'icon': 'icon-github',
         'url': 'https://github.com/spritsail',
         'text': 'Github'
       }
     ]
   }, {
-    'image': '/assets/home/background-4.jpg',
-    'title': 'Ads missing as well',
-    'text': 'And since i hate any ads, this is not implemented as well',
-    'links': []
+    'image': '/assets/home/background-1.jpg',
+    'title': 'Spritsail',
+    'text': 'Check us out on Docker Hub',
+    'links': [
+      {
+        'icon': 'icon-stack',
+        'url': 'https://hub.docker.com/r/spritsail',
+        'text': 'Docker Hub'
+      }
+    ]
   }
 ]
 
