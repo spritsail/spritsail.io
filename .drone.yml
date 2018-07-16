@@ -1,0 +1,28 @@
+pipeline:
+  build:
+    image: alpine:3.8
+    commands:
+      - apk add py-pip git
+      - pip install pelican markdown beautifulsoup4
+      - git clone https://github.com/getpelican/pelican-plugins.git /pelican-plugins
+      - git clone https://github.com/claudio-walser/pelican-fh5co-marble.git /fh5co-marble
+      - cp copyright.html /fh5co-marble/templates/partial/copyright.html
+      - pelican -s pelicanconf.py -o output/ content/
+      - mkdir -p output/theme/css/fonts
+      - cp output/theme/fonts/icomoon/icomoon.* output/theme/css/fonts/
+
+  publish:
+    image: alpine:3.8
+    secrets: [ publishkey ]
+    when: { branch: [ master ], event: [ push, tag, deployment ] }
+    commands:
+      - apk add rsync openssh-client
+      - echo "$PUBLISHKEY" > publishkey
+      - chmod 600 publishkey
+      - rsync -r --delete -e "ssh -i publishkey -o StrictHostKeyChecking=no" output/* pelican-upload@web.spritsail.io:~
+
+  notify:
+    image: spritsail/notify
+    when: { status: [ success, failure ] }
+    secrets: [ webhook_url, notify_token ]
+
