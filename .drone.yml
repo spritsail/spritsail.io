@@ -3,10 +3,11 @@ pipeline:
     image: alpine:3.8
     commands:
       - apk add py-pip git
-      - pip install pelican markdown beautifulsoup4
+      - pip install pelican markdown beautifulsoup4 pymdown-extensions
       - git clone https://github.com/getpelican/pelican-plugins.git /pelican-plugins
       - git clone https://github.com/claudio-walser/pelican-fh5co-marble.git /fh5co-marble
       - git -C /fh5co-marble apply /drone/src/github.com/spritsail/spritsail.io/theme.patch
+      - sed -i "/table = etree.SubElement(parent, 'table')/a\ \ \ \ \ \ \ \ table.set('class', 'table table-striped table-hover table-bordered')" /usr/lib/python2.7/site-packages/markdown/extensions/tables.py
       - pelican -s pelicanconf.py -o output/ content/
       - mkdir -p output/theme/css/fonts
       - cp output/theme/fonts/icomoon/icomoon.* output/theme/css/fonts/

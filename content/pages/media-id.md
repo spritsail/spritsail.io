@@ -1,7 +1,8 @@
 Title: Media IDs
+Authors: Adam Dodman
 Status: published
 
-We alwyas want our containers to work together where possible. This is doubly true for our media containers, that typically need to share files and data between them. To help with this goal, we have laid out a roadmap to prevent user ID conflicts, thereby making sure each application stays seperate and secure while still sharing needed resources.
+We always want our containers to work together where possible. This is doubly true for our media containers, that typically need to share files and data between them. To help with this goal, we have laid out a roadmap to prevent user ID conflicts, thereby making sure each application stays seperate and secure while still sharing needed resources.
 
 Below is a table that shows the UIDs assigned to specific containers. Currently all of the UIDs are between 900 and 950. Crossed out applications represent a reserved UID, for an application where we do not have a functional container at this time.
 

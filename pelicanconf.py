@@ -35,10 +35,10 @@ EXTRA_PATH_METADATA = {'assets/favicon.ico': {'path': 'favicon.ico'}}
 
 MARKDOWN = {
     'extension_configs': {
-        'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},
         'markdown.extensions.sane_lists': {},
         'markdown.extensions.smarty': {},
+        'pymdownx.github': {},
     },
     'output_format': 'html5',
 }
