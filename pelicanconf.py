@@ -33,6 +33,16 @@ PAGE_PATHS = ['pages']
 ARTICLE_PATHS = ['blog']
 EXTRA_PATH_METADATA = {'assets/favicon.ico': {'path': 'favicon.ico'}}
 
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+        'markdown.extensions.sane_lists': {},
+        'markdown.extensions.smarty': {},
+    },
+    'output_format': 'html5',
+}
+
 
 # logo path, needs to be stored in PATH Setting
 LOGO = '/assets/logo.png'
